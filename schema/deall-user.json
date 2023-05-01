@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "644fc403e454e6915e91d027"
+  },
+  "user_level": 2,
+  "create_time": {
+    "$date": "2023-05-01T13:52:03.916Z"
+  },
+  "user": {
+    "first_name": "tes",
+    "last_name": "tis",
+    "email": "testis@gmail.com",
+    "password": "$2a$15$7dTIPzI.sZL205yuNriXhOZ04sz9c6olSx4m9vVutkvI4aSj0VvE.",
+    "gender": "Male",
+    "birth_date": {
+      "$date": "1999-12-11T17:00:00.000Z"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "644fc999d570c832ddb8e322"
+  },
+  "user_level": 2,
+  "create_time": {
+    "$date": "2023-05-01T14:15:53.508Z"
+  },
+  "user": {
+    "first_name": "qwerty",
+    "last_name": "uiop",
+    "email": "qwerty@gmail.com",
+    "password": "$2a$15$qwKNSlzuSvL9n9kmC/6/t.dPTlzIUbbiPjVB51IXoujfyVnXftNeK",
+    "gender": "Male",
+    "birth_date": {
+      "$date": "1999-12-11T17:00:00.000Z"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "644fcc0f95715436dc6145ef"
+  },
+  "user_level": 3,
+  "create_time": {
+    "$date": "2023-05-01T14:26:23.226Z"
+  },
+  "user": {
+    "first_name": "Alfonsus",
+    "last_name": "Susanto",
+    "email": "asdf@gmail.com",
+    "password": "$2a$15$PlHu0/3NcHah5cWLGk2oPefWG1kyvXhbMG//whmlKgutKgGp60w7.",
+    "gender": "Male",
+    "birth_date": {
+      "$date": "1999-12-11T17:00:00.000Z"
+    }
+  }
+}]

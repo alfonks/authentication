@@ -1,0 +1,31 @@
+version: "3"
+services:
+  mongo:
+    image: mongo
+    expose:
+      - 27017
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ruri
+      MONGO_INITDB_ROOT_PASSWORD: Q1w2E3r4T5y6
+    ports:
+      - "27017:27017"
+
+  mongo-express:
+    image: mongo-express
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ruri
+      ME_CONFIG_MONGODB_ADMINPASSWORD: Q1w2E3r4T5y6
+      ME_CONFIG_MONGODB_URL: mongodb://ruri:Q1w2E3r4T5y6@mongodb:27017/
+
+  redis_cluster:
+    image: neohq/redis-cluster
+    container_name: redis_cluster
+    environment:
+      - IP=0.0.0.0
+    ports:
+      - "7000-7005:7000-7005"
+    restart: unless-stopped

@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "0fccbe9f-ab97-42d4-b4a9-9b889a88b8b5",
+		"name": "deall",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11929448"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"yoman\": \"yoman\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/status",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign Up Normal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"Alfonsus\",\n    \"last_name\": \"Susanto\",\n    \"email\": \"asdf@gmail.com\",\n    \"password\": \"asdf\",\n    \"gender\": \"Male\",\n    \"birth_date\": \"1999-12-12T00:00:00+07:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/user/sign-up",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"user",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign Up Admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Jwt-Access-Token",
+						"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFzZGZAZ21haWwuY29tIiwiZXhwIjoxNjgyOTUyMDg5LCJ1c2VyX2xldmVsIjozfQ.qxC3aaIzJ4NBCrHZclSteMDDs442opk_Ha4U7HMDuKsG3E2YsQTSopLiNLGoXagLM7l7aGAAchBEcsqASTjrQg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"qwerty\",\n    \"last_name\": \"uiop\",\n    \"email\": \"qwerty@gmail.com\",\n    \"password\": \"qwerty\",\n    \"gender\": \"Male\",\n    \"birth_date\": \"1999-12-12T00:00:00+07:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/user/sign-up/admin",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"user",
+						"sign-up",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "log in normal success",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"asdf@gmail.com\",\n    \"password\": \"asdf\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/user/log-in",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"user",
+						"log-in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "log in admin success",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Jwt-Refresh-Token",
+						"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ0OTExODR9.lJa18pod2v7LfAq08CXL5RfGmHMo-pVTkDiUUrBx1FIYxWHHpNx1-W_JlmMVMzu1_USwA4X0cVIrAXwNSb5Rgw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"qwerty@gmail.com\",\n    \"password\": \"qwerty\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/user/log-in",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"user",
+						"log-in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generate new pair token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Jwt-Refresh-Token",
+						"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InF3ZXJ0eUBnbWFpbC5jb20iLCJleHAiOjE3MTQ0OTE2NDZ9.iLZk9V02qpdSSE7bNrN1T2YhEeTEwQ4v56hh5OMJFSB0w4_IPtDW0nXwhnlDYXoZ_Xlay7Zynlpr1VDkGd-XkA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/token/refresh-token",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"token",
+						"refresh-token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

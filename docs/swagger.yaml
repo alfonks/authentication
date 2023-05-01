@@ -1,0 +1,52 @@
+definitions:
+  api.HTTP:
+    properties:
+      data:
+        $ref: '#/definitions/api.HTTPData'
+      process_time:
+        type: string
+      status:
+        type: integer
+      status_text:
+        type: string
+    type: object
+  api.HTTPData:
+    properties:
+      message:
+        type: string
+      request: {}
+      response: {}
+    type: object
+info:
+  contact: {}
+paths:
+  /status:
+    get:
+      consumes:
+      - application/json
+      description: check system status, should return status ok,
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/api.HTTP'
+            - properties:
+                data:
+                  $ref: '#/definitions/api.HTTPData'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            allOf:
+            - $ref: '#/definitions/api.HTTP'
+            - properties:
+                data:
+                  $ref: '#/definitions/api.HTTPData'
+              type: object
+      summary: health check for system
+      tags:
+      - Health Check
+swagger: "2.0"
